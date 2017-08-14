@@ -12,11 +12,12 @@ namespace Task.Data.Model
         {
            
         }
+        //yorum
         [Display(Name = "Tipi")]
         public EnumResource.ResourceType ResourceType { get; set; }
         public EnumResource.ResourceSchedule Schedule { get; set; }
         public EnumResource.ResourceOvercomeCurrency Currency { get; set; }
-        public double OverCome { get; set; }
+       // public double OverCome { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
 
     }
