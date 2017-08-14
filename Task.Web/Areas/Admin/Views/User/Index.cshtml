@@ -1,0 +1,72 @@
+﻿@model Task.Web.Areas.Admin.Models.IndexModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Data Table With Full Features</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Mail</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Rolleri</th>
+                    <th>Projeleri</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.users)
+                {
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>
+                            @foreach (var role in user.Roles)
+                            {
+                                @role.Type
+                            }
+                        </td>
+                        <td>
+                            @foreach (var project in user.Teams)
+                            {
+                                @project.Project
+                            }
+                        </td>
+                                          
+                    </tr>
+                }
+            
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Mail</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Rolleri</th>
+                    <th>Projeleri</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+<script>
+  $(function () {
+
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
