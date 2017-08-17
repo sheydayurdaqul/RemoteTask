@@ -10,7 +10,6 @@ namespace Task.Data.Model
         {
             Roles = new List<Role>();
         }
-        public int Id { get; set; }
         public bool DefaultforAdmins{get;set;}
         [Display(Name = "Adı")]
         public string Name { get; set; }

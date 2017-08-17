@@ -15,15 +15,14 @@ namespace Task.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<Record> Records { get; set; }
-        public DbSet<ProjectTask> Tasks { get; set; }
         public DbSet<Page> Pages { get; set; }
         public DbSet<Action> Actions { get; set; }
         public DbSet<FeedComment> FeedComments { get; set; }
         public DbSet<FeedNote> FeedNotes { get; set; }
+        public DbSet<Team> Teams { get; set; }
         public DbSet<CurrencyRecord> CurrencyRecords { get; set; }
-
-
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

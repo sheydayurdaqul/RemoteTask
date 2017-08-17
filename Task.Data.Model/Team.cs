@@ -10,10 +10,9 @@ namespace Task.Data.Model
         {
            
         }
-        public int Id { get; set; }
-        [ForeignKey("Project")]
+        [Key,ForeignKey("Project")]
         public int ProjectId { get; set; }
-        public User Owner { get; set; }
+        public virtual User Owner { get; set; }
         public virtual Project Project { get; set; }
         public virtual ICollection<User> Users { get; set; }
      

@@ -8,8 +8,7 @@ namespace Task.Data.Model
 {
     public class Project : ModelBase
     {
-        public int Id { get; set; }
-        [Key,ForeignKey("Team")]
+        [ForeignKey("Team")]
         public int TeamId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
@@ -18,7 +17,7 @@ namespace Task.Data.Model
         public DateTime StartTime { get; set; }
         public virtual Team Team { get; set; }
         public virtual ICollection<Resource> Recources { get; set; }
-        public virtual ICollection<ProjectTask> Tasks { get; set; }
+        public virtual ICollection<ProjectTask> ProjectTasks { get; set; }
      
     }
 }

@@ -13,7 +13,7 @@ namespace Task.Data.Model
             Notes = new List<Note>();
         }
 
-        [Key, ForeignKey("Project")]
+        [ForeignKey("Project")]
         public int ProjectId { get; set; }
         public int ParentId { get; set; }
         public string Content { get; set; }

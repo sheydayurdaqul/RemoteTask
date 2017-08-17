@@ -10,11 +10,14 @@ namespace Task.Data.Model
         {
            
         }
-        public int Id { get; set; }
         [Display(Name = "İçerik")]
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        [ForeignKey("ProjectTask")]
+        public int ProjectTaskId { get; set; }
         public string Content { get; set; }      
         public virtual User User { get; set; }
-        public virtual ProjectTask Task { get; set; }
+        public virtual ProjectTask ProjectTask { get; set; }
         // Relations
 
     }
